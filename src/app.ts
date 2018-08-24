@@ -2,6 +2,7 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as mongoose from "mongoose";
 import * as route from "./routes/routes";
+import {handleError} from "./util/error";
 
 class App {
 
@@ -12,6 +13,7 @@ class App {
         this.database();
         this.config();
         this.routes();
+        this.errors();
     }
 
     // Setup database connection
@@ -28,6 +30,11 @@ class App {
     // Bind routes
     private routes(): void {
         route.routes(this.app);
+    }
+
+    //error handling
+    private errors(): void {
+        this.app.use(handleError);
     }
 
 }

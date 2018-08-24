@@ -15,7 +15,7 @@ export const addUser = (req, res) => {
 export const getUsers = (req, res) => {
     User.find({}, (err, users) => {
         if (err) {
-            res.send(err);
+            return next(err);
         }
         res.send(users);
         console.info('Sent all users!');
@@ -26,7 +26,7 @@ export const getUsers = (req, res) => {
 export const getUser = (req, res) => {
     User.findOne({_id: req.params.id}, (err, user) => {
         if (err) {
-            res.send(err);
+            return next(err);
         }
         res.send(user);
         console.info('Sent the requested user!');
@@ -37,7 +37,7 @@ export const getUser = (req, res) => {
 export const deleteUser = (req, res) => {
     User.remove({_id: req.params.id}, (err) => {
         if (err) {
-            res.send(err);
+            return next(err);
         }
         res.send({info: "Deleted a user!"});
         console.info('Deleted a user!');
