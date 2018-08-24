@@ -1,7 +1,7 @@
 {
   "name": "tcs-backend",
   "version": "1.0.0",
-  "description": "basic template for node ts backend applications",
+  "description": "tcs-backend",
   "main": "app.js",
   "scripts": {
     "build": "tsc",
@@ -20,7 +20,7 @@
     "request": "^2.85.0",
     "typescript": "^2.8.1"
   },
-  "author": "Armin Windlin",
+  "author": "Armin Windlin, Daniel Zimmermann",
   "license": "ISC",
   "devDependencies": {}
 }
