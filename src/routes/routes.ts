@@ -1,16 +1,16 @@
-import * as banana from "../controller/bananaC";
+import * as user from "../controller/userC";
 
 export const routes = (app) => {
 
-    // Add api's for /banana route
-    app.route('/banana')
-        .get(banana.getBananas)
-        .post(banana.addBanana);
+    // Add api's for /user route
+    app.route('/user')
+        .get(user.getUsers)
+        .post(user.addUser);
 
-    // Add api's for /banana/:ID route
-    app.route('/banana/:id')
-        .get(banana.getBanana)
-        .delete(banana.deleteBanana);
+    // Add api's for /user/:ID route
+    app.route('/user/:id')
+        .get(user.getUser)
+        .delete(user.deleteUser);
 
 };
 
