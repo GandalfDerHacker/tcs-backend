@@ -1,45 +1,45 @@
-import {Banana} from "../model/banana";
+import {User} from "../model/user";
 
-// Method to add a single banana to database
-export const addBanana = (req, res) => {
-    const banana = new Banana(req.body);
-    banana.save((err, task) => {
+// Method to add a single user to database
+export const addUser = (req, res) => {
+    const user = new User(req.body);
+    user.save((err, task) => {
         if (err)
             res.send(err);
-        res.send(banana);
-        console.info('Added a banana!');
+        res.send(user);
+        console.info('Added a user!');
     });
 };
 
-// Method to get all banana from database
-export const getBananas = (req, res) => {
-    Banana.find({}, (err, bananas) => {
+// Method to get all user from database
+export const getUsers = (req, res) => {
+    User.find({}, (err, users) => {
         if (err) {
             res.send(err);
         }
-        res.send(bananas);
-        console.info('Sent all bananas!');
+        res.send(users);
+        console.info('Sent all users!');
     });
 };
 
-// Method to get a single banana to database
-export const getBanana = (req, res) => {
-    Banana.findOne({_id: req.params.id}, (err, banana) => {
+// Method to get a single user to database
+export const getUser = (req, res) => {
+    User.findOne({_id: req.params.id}, (err, user) => {
         if (err) {
             res.send(err);
         }
-        res.send(banana);
-        console.info('Sent the requested banana!');
+        res.send(user);
+        console.info('Sent the requested user!');
     });
 };
 
-// Method to delete a single banana to database
-export const deleteBanana = (req, res) => {
-    Banana.remove({_id: req.params.id}, (err) => {
+// Method to delete a single user to database
+export const deleteUser = (req, res) => {
+    User.remove({_id: req.params.id}, (err) => {
         if (err) {
             res.send(err);
         }
-        res.send({info: "Deleted a banana!"});
-        console.info('Deleted a banana!');
+        res.send({info: "Deleted a user!"});
+        console.info('Deleted a user!');
     });
 };
