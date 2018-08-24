@@ -1,5 +1,5 @@
 {
-  "name": "node_ts_template",
+  "name": "tcs-backend",
   "version": "1.0.0",
   "description": "basic template for node ts backend applications",
   "main": "app.js",
