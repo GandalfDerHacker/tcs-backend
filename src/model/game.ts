@@ -15,7 +15,10 @@ const gameSchema: Schema = new Schema({
         type: Date,
         required: 'enter the date of the game'
     },
-    tickets: [Schema.Types.ObjectId]
+    tickets: {
+        type: Number,
+        required: 'enter the number of available tickets'
+    }
 });
 
 // Export schema for game collection
