@@ -7,6 +7,9 @@ const ticketSchema: Schema = new Schema({
         type: Schema.Types.ObjectId,
         required: 'enter the owner of the ticket'
     },
+    client: {
+        type: Schema.Types.ObjectId
+    },
     position: {
         type: Number,
         required: 'enter the position of the ticket'

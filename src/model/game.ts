@@ -12,7 +12,7 @@ const gameSchema: Schema = new Schema({
         required: 'enter the type of the game'
     },
     date: {
-        date: Date,
+        type: Date,
         required: 'enter the date of the game'
     },
     tickets: [Schema.Types.ObjectId]
