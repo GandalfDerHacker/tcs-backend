@@ -1,4 +1,5 @@
 import * as user from "../controller/userC";
+import * as datafiller from "../util/dataFiller";
 
 export const routes = (app) => {
 
@@ -11,6 +12,9 @@ export const routes = (app) => {
     app.route('/user/:id')
         .get(user.getUser)
         .delete(user.deleteUser);
+
+    app.route('/fill')
+        .post(datafiller.fillData);
 
 };
 
