@@ -4,7 +4,7 @@ import {Schema} from "mongoose";
 // Create schema for ticket collection
 const ticketSchema: Schema = new Schema({
     owner: {
-        type: Schema.Types.ObjectId,
+        type: String,
         required: 'enter the owner of the ticket'
     },
     position: {
@@ -21,7 +21,7 @@ const ticketSchema: Schema = new Schema({
     },
     code: {
         type: String,
-        required: 'enter the gender of the ticket'
+        required: 'enter the code of the ticket'
     }
 });
 

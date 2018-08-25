@@ -16,7 +16,7 @@ const userSchema: Schema = new Schema({
         required: 'enter the color of the user'
     },
     date: {
-        type: Number,
+        type: Date,
         required: 'enter the size of the user'
     },
     sex: {
