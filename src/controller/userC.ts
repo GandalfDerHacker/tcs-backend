@@ -1,18 +1,18 @@
 import {User} from "../model/user";
 
 // Method to add a single user to database
-export const addUser = (req, res) => {
+export const addUser = (req, res, next) => {
     const user = new User(req.body);
     user.save((err, task) => {
         if (err)
-            res.send(err);
+            return next(err);
         res.send(user);
         console.info('Added a user!');
     });
 };
 
 // Method to get all user from database
-export const getUsers = (req, res) => {
+export const getUsers = (req, res, next) => {
     User.find({}, (err, users) => {
         if (err) {
             return next(err);
@@ -23,7 +23,7 @@ export const getUsers = (req, res) => {
 };
 
 // Method to get a single user to database
-export const getUser = (req, res) => {
+export const getUser = (req, res, next) => {
     User.findOne({_id: req.params.id}, (err, user) => {
         if (err) {
             return next(err);
@@ -34,7 +34,7 @@ export const getUser = (req, res) => {
 };
 
 // Method to delete a single user to database
-export const deleteUser = (req, res) => {
+export const deleteUser = (req, res, next) => {
     User.remove({_id: req.params.id}, (err) => {
         if (err) {
             return next(err);
