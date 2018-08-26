@@ -70,7 +70,7 @@ export const fillData = (req, res, next) => {
         request.post(endpoint + 'game', {
 
                 json: true, body: {
-                    "name": nameSet[Math.floor(Math.random() * nameSet.length)] + " " + firstNameSet[Math.floor(Math.random() * firstNameSet.length)],
+                    "name": nameGameSet[Math.floor(Math.random() * nameGameSet.length)] + " vs " + nameGameSet[Math.floor(Math.random() * nameGameSet.length)],
                     "game_type": type[Math.floor(Math.random() * type.length)],
                     "date": randomDate(new Date(2018, 8, 26), new Date(2019, 8, 25)),
                     "tickets": Math.floor(Math.random() * 100 + 3)
@@ -84,7 +84,7 @@ export const fillData = (req, res, next) => {
         )
 
     }
-    res.send("fields created");
+    res.send("data created");
 
 };
 
